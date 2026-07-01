@@ -7,7 +7,7 @@ class Categories {
         $this->db = $dto;
     }
 
-    // Method that retrieves all categories
+    /* Method that retrieves all categories */
     public function findAllCategories() {
         $sql = 'SELECT *
                 FROM categories
@@ -17,7 +17,6 @@ class Categories {
         $query->execute();
 
         return $query->fetchAll(PDO::FETCH_ASSOC);
-
     }
 }
 ?>
