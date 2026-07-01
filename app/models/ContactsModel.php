@@ -1,14 +1,14 @@
 <?php
 
-class Contacts {
+class ContactsModel {
     private $db;
 
-    function __construct($pdo) {
+    public function __construct($pdo) {
         $this->db = $pdo;
     }
 
     /* Method that retrieves all contacts */
-    public function findAllContact() {
+    public function findAllContacts() {
         $sql = 'SELECT contacts.*, categories.name 
                 FROM contacts 
                 JOIN categories ON contacts.category_id = categories.id
