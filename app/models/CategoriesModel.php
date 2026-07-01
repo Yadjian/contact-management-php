@@ -1,10 +1,10 @@
 <?php
 
-class Categories {
+class CategoriesModel {
     private $db;
 
-    public function __construct($dto) {
-        $this->db = $dto;
+    public function __construct($pdo) {
+        $this->db = $pdo;
     }
 
     /* Method that retrieves all categories */
