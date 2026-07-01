@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS contacts (
     FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
-INSERT INTO categories (name) VALUES ('Ami');
+INSERT INTO categories (name) VALUES ('Amis');
 INSERT INTO categories (name) VALUES ('Famille');
 INSERT INTO categories (name) VALUES ('Travail');
 INSERT INTO categories (name) VALUES ('Autre');

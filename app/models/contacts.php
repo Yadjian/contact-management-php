@@ -7,7 +7,7 @@ class Contacts {
         $this->db = $pdo;
     }
 
-    // Method that retrieves all contacts
+    /* Method that retrieves all contacts */
     public function findAllContact() {
         $sql = 'SELECT contacts.*, categories.name 
                 FROM contacts 
@@ -20,7 +20,7 @@ class Contacts {
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Method that finds a single contact
+    /* Method that finds a single contact */
     public function findContact($id) {
         $sql = 'SELECT contacts.*, categories.name 
                 FROM contacts 
@@ -30,11 +30,10 @@ class Contacts {
         $query = $this->db->prepare($sql);
         $query->execute(['id' => $id]);
 
-        return $query->fetch(PDO::FETCH_ASSOC);
-        
+        return $query->fetch(PDO::FETCH_ASSOC); 
     }
 
-    // Method that creates a new contact
+    /* Method that creates a new contact */
     public function addContact($data) {
         $sql = 'INSERT INTO contacts (first_name, last_name, email, phone, city, address, category_id) 
                 VALUES (:first_name, :last_name, :email, :phone, :city, :address, :category_id)';
@@ -42,10 +41,9 @@ class Contacts {
         $query = $this->db->prepare($sql);
 
         return $query->execute($data);
-
     }
 
-    // Method that deletes a contact
+    /* Method that deletes a contact */
     public function deleteContact($id) {
         $sql = 'DELETE FROM contacts 
                 WHERE id = :id';
@@ -53,10 +51,9 @@ class Contacts {
         $query = $this->db->prepare($sql);
 
         return $query->execute(['id' => $id]);
-
     }
 
-    // Method that updates an existing contact
+    /* Method that updates an existing contact */
     public function updateContact($id, $data) {
         $sql = 'UPDATE contacts 
                 SET first_name = :first_name, last_name = :last_name, email = :email, phone = :phone, city = :city, address = :address, category_id = :category_id 
