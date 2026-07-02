@@ -1,5 +1,8 @@
 <?php
 
+/*
+* Model managing contact categories
+*/
 class CategoriesModel {
     private $db;
 
@@ -7,12 +10,12 @@ class CategoriesModel {
         $this->db = $pdo;
     }
 
-    /* Method that retrieves all categories */
+    //Method that retrieves all categories
     public function findAllCategories() {
         $sql = 'SELECT *
                 FROM categories
                 ORDER BY name ASC';
-
+                
         $query = $this->db->prepare($sql);
         $query->execute();
 

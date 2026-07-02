@@ -4,7 +4,6 @@ include 'config.php';
 
 try {
     $pdo = new PDO("mysql:host=$server;dbname=$dbname", $user, $pass);
-    echo "Connexion réussi !";
 
 } catch (PDOException $e) {
     echo "Echec de la connexion ! : " . $e->getMessage();

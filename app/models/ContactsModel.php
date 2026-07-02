@@ -1,5 +1,8 @@
 <?php
 
+/*
+* Model managing contact operations
+*/
 class ContactsModel {
     private $db;
 
@@ -9,10 +12,10 @@ class ContactsModel {
 
     /* Method that retrieves all contacts */
     public function findAllContacts() {
-        $sql = 'SELECT contacts.*, categories.name 
+        $sql = 'SELECT contacts.*, categories.name AS categoryName
                 FROM contacts 
                 JOIN categories ON contacts.category_id = categories.id
-                ORDER BY contacts.last_name ASC';
+                ORDER BY contacts.first_name ASC';
 
         $query = $this->db->prepare($sql);
         $query->execute();
@@ -22,7 +25,7 @@ class ContactsModel {
 
     /* Method that finds a single contact */
     public function findContact($id) {
-        $sql = 'SELECT contacts.*, categories.name 
+        $sql = 'SELECT contacts.*, categories.name AS categoryName
                 FROM contacts 
                 JOIN categories ON contacts.category_id = categories.id
                 WHERE contacts.id = :id';
