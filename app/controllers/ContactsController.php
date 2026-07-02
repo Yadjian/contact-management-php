@@ -11,20 +11,18 @@ class ContactsController {
 
     public function list() {
         $contacts = $this->contactsModel->findAllContacts();
-        require_once ("./app/views/listContactsPage.php");    
+        require_once ("./app/views/myContacts.php");    
     }
 
-    public function form() {
-        $categories = $this->categoriesModel->findAllCategories();
-        require_once ("./app/views/addContactPage.php");    
-    }
-
-    public function create() {
+    public function add() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->contactsModel->addContact($_POST);
-            header('Location: index.php.?page=contacts');
+            header('Location: index.php?page=contacts');
             exit; 
         }
+        $categories = $this->categoriesModel->findAllCategories();
+        
+        require_once ("./app/views/addContact.php");
     }
 
     public function delete($id) {
@@ -40,8 +38,9 @@ class ContactsController {
             exit;
 
         } else { 
-            $contacts = $this->contactsModel->findContact($id);
+            $contact = $this->contactsModel->findContact($id);
             $categories = $this->categoriesModel->findAllCategories();
+
             require_once("./app/views/editContactPage.php");
         }
     }
