@@ -8,10 +8,10 @@ Contact management application (PHP).
 * Database: MySQL
 
 ## Configure the config/config.php file:
-$server = " ... ";
-$user = " ... ";
-$pass = " ... ";
-$dbname = " ... ";
+* $server = " ... ";
+* $user = " ... ";
+* $pass = " ... ";
+* $dbname = " ... ";
 
 ## Run the SQL script
 
