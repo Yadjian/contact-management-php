@@ -1,26 +1,26 @@
 # contact-management-php
 
-Application de gestion de contacts (PHP).
+Contact management application (PHP).
 
-## Stack Technique
-* Langage : PHP
-* Architecture : MVC (Model, View, Controller)
-* Base de données : MySQL
+## Technical Stack
+* Language: PHP
+* Architecture: MVC (Model, View, Controller)
+* Database: MySQL
 
-## Configurer le fichier config/config.php : 
+## Configure the config/config.php file:
 $server = " ... ";
 $user = " ... ";
 $pass = " ... ";
 $dbname = " ... ";
 
-## Lancer le script SQL
+## Run the SQL script
 
 * sudo mysql -u root -p < init.sql
 
-## Lancer l'application
+## Launch the application
 
 * php -S localhost:8000
 
-## Accédez à l'application
+## Access the application
 
 * http://localhost:8000
